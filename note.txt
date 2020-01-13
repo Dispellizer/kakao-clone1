@@ -1,0 +1,67 @@
+부모 클래스를 만들고 박스를 만든다
+디스플레이는 inline-block
+flex를 사용할때는 children박스에 적용하지 않는다.
+오직 부모 클래스에만 적용하면 돤다
+space-around라고 하면 컨텐츠 뿐만 아니라 그 주변도 같은 간격으로 조정됨
+justify-content는 수평적용
+align-item은 수직적용
+flex-direction: column;
+수직으로 적용
+디폴트 값은 row
+column적용시 justify-content는 수직
+align-item은 수평 적용된다
+flex-wrap의 default는 no-wrap
+no-wrap는 폭은 무시하고 다 줄어든다(화면의 크기를 줄였을때)
+부모컨테이너를 플렉스로 선언하면 그안에 종속된 칠드러 ㄴ들은 움직일 수 있다.
+그렇기 때문에 각각 박스에게 일일히 명령할 필요가 없다,
+
+
+가상셀렉터
+class나 id를 쓰지않고 선택하는 방법
+last-child는 모든 박스중에 마지막 박스를 선택한다.
+first-child는 첫번재 박스
+nth-child(n)
+n번째 박스를 찾음
+2n이라면 2번째 박스만 골라서 선택
+input + .box <-- 이 뜻은 서로 형제라는 뜻
+input > .box <-- 직계 라는 뜻, 그 밑에 다른 박스가 있으면 첫번쨰만 적용(나머지 적용 x)
+
+state
+active, focus, visited, hover
+
+hover는 박스위에 마우스가 올라가 있는것
+active는 클릭한것
+focus는 textarea 같은 경우 글을 쓸수있을때를 말함
+visited는 a와 같이 링크에 방문한 다음을 말함
+
+transitions
+트랜지션은 어떤 state가 바뀔때 적용되는 것이다.
+트랜지션은 작성한 프로퍼티 혹은 all(전체)를 변경해주는 거다.
+transition: all 0.5s ease-in-out;
+transition: background-color 0.5s ease-in-out;
+
+transformations
+트랜스포메이션은 html 문서의 element들을 변경, 모습이 변하는 효과를 뜻함
+여러 효과들은 mdn 참고
+
+트랜지션과 트렌스포메이션을 합쳐서 자주사용
+transform: rotate(5turn);
+transform: rotate(5turn) scale(0.5, 0.5);
+
+animations
+트랜지션과 트랜스포메이션을 hover 없이 계속 발생시키고 싶을때
+애니메이션을 사용한다.
+우선 이름을 지어야 한다.
+키프레임은 css로 하여금 너가 애니메이션을 생성했단 것을 알려준다
+무한 반복을 원하면 infinite를 적용
+from 아무것도 없는 상태에서
+to 어떤 변화된 모습까지
+여러가지 상태 변화를 주고 싶다면 0% 50% 100%등을 사용가능
+
+mediaqueries
+브라우저가 큰지 작은지 알아내는 방법
+큰스크린을 위한 css가 있고 작은 스크린을 위한 css가 있따
+(모바일, 컴)
+@media sereen and (min-width:320px) and (max-width:640px)
+우리가 보는 화면이 최소값 320 최대값 640ㅇ ㅣ란뜻
+320~640사이에서 미디어 쿼리에 적용된 프로퍼티를 적용
